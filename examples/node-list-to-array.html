@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>to Array</title>
+	<style>
+		.red{
+			color:#f00;
+		}
+	</style>
+</head>
+<body>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore tempora.</p>
+	<p>Velit sapiente suscipit cum laboriosam. Incidunt mollitia libero asperiores deserunt.</p>
+	<p>Obcaecati nesciunt odit repellendus earum repudiandae mollitia molestias assumenda officia?</p>
+	<p>Cum aliquam dolores atque nobis optio nisi officiis quam quisquam?</p>
+	<p>Consequatur aut assumenda veritatis est deleniti commodi nam? Adipisci omnis!</p>
+	<script>
+		var paragrafos = Array.prototype.slice.call( document.querySelectorAll( 'p' ) );
+		
+		paragrafos.forEach(function( p ) {
+			p.classList.add( 'red' );
+		});
+	</script>
+</body>
+</html>

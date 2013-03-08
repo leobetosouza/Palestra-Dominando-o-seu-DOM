@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTMLCollection</title>
+</head>
+<body>
+	<form action="" name="contato">
+		Contato 1
+	</form>
+	<form action="" name="contato">
+		Contato 2
+	</form>
+
+	<script>
+		var contato = document.forms[ 'contato' ];
+		document.writeln( contato.innerHTML );
+	</script>
+</body>
+</html>

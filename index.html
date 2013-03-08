@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-	<title>Getting Started with deck.js</title>
+	<title>Palestra Dominando seu DOM | Leonardo Alberto Souza</title>
 	
 	<meta name="description" content="A jQuery library for modern HTML presentations">
 	<meta name="author" content="Caleb Troughton">
@@ -23,7 +23,7 @@
 	<link rel="stylesheet" href="extensions/scale/deck.scale.css">
 	
 	<!-- Style theme. More available in /themes/style/ or create your own. -->
-	<link rel="stylesheet" href="themes/style/neon.css">
+	<link rel="stylesheet" href="themes/style/swiss.css">
 	
 	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
 	<link rel="stylesheet" href="themes/transition/horizontal-slide.css">
@@ -34,138 +34,210 @@
 <body class="deck-container">
 
 <!-- Begin slides -->
-<section class="slide" id="title-slide">
-	<h1>Getting Started with deck.js</h1>
+<section class="slide">
+	<h1>Dominando o seu DOM</h1>
 </section>
 
-<section class="slide" id="how-to-overview">
-	<h2>How to Make a Deck</h2>
-	<ol>
-		<li>
-			<h3>Write Slides</h3>
-			<p>Slide content is simple&nbsp;HTML.</p>
-		</li>
-		<li>
-			<h3>Choose Themes</h3>
-			<p>One for slide styles and one for deck&nbsp;transitions.</p>
-		</li>
-		<li>
-			<h3>Include Extensions</h3>
-			<p>Add extra functionality to your deck, or leave it stripped&nbsp;down.</p>
-		</li>
-	</ol>
+<section class="slide" id="photo">
+	<h2>Este cara feio que vos fala</h2>
+	<img src="img/leobetosouza.jpg">
 </section>
 
-<section class="slide" id="markup">
-	<h2>The Markup</h2>
-	<p>Slides are just HTML elements with a class of <code>slide</code>.</p>
-	<pre><code>&lt;section class=&quot;slide&quot;&gt;
-   &lt;h2&gt;How to Make a Deck&lt;/h2&gt;
-   &lt;ol&gt;
-      &lt;li&gt;
-         &lt;h3&gt;Write Slides&lt;/h3&gt;
-         &lt;p&gt;Slide content is simple HTML.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-         &lt;h3&gt;Choose Themes&lt;/h3&gt;
-         &lt;p&gt;One for slide styles and one for deck transitions.&lt;/p&gt;
-      &lt;/li&gt;
-      &hellip;
-   &lt;/ol&gt;
-&lt;/section&gt;</code></pre>
-</section>
-
-<section class="slide" id="themes">
-	<h2>Style Themes</h2>
-	<p>Customizes the colors, typography, and layout of slide&nbsp;content.</p>
-	<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/css/style-theme.css&quot;&gt;</code></pre>
-	<h2>Transition Themes</h2>
-	<p>Defines transitions between slides using CSS3 transitions.  Less capable browsers fall back to cutaways. But <strong>you</strong> aren&rsquo;t using <em>those</em> browsers to give your presentations, are&nbsp;you&hellip;</p>
-	<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/css/transition-theme.css&quot;&gt;</code></pre>
-</section>
-
-<section class="slide" id="extensions">
-	<h2>Extensions</h2>
-	<p>Core gives you basic slide functionality with left and right arrow navigation, but you may want more. Here are the ones included in this&nbsp;deck:</p>
-	
+<section class="slide" id="quem-sou-eu">
+	<h2>Leonardo Alberto Souza</h2>
 	<ul>
-		<li class="slide" id="extensions-goto">
-			<strong>deck.goto</strong>: Adds a shortcut key to jump to any slide number.  Hit g, type in the slide number, and hit&nbsp;enter.
+		<li>
+			<h3>Mais conhecido como <strong>Leobetosouza</strong></h3>
+			<p>Follow me: <a href="http://twitter.com/leobetosouza" rel="external">Twitter</a>, <a href="http://facebook.com/leobetosouza" rel="external">Facebook</a>, <a href="http://github.com/leobetosouza" rel="external">GitHub</a></p>
 		</li>
-		
-		<li class="slide" id="extensions-hash">
-			<strong>deck.hash</strong>: Enables internal linking within slides, deep linking to individual slides, and updates the address bar &amp; a permalink anchor with each slide&nbsp;change.
+		<li>
+			<h3><strong>Desenvolvedor Front-end</strong></h3>
+			<p>Há +- 6 anos. Hoje trabalho na <a href="http://homemmaquina.com.br" rel="external">Homem Máquina</a> e sou instrutor do <a href="http://ilearn.com.br" rel="external">iLearn</a>.</p>
 		</li>
-
-		<li class="slide" id="extensions-menu">
-			<strong>deck.menu</strong>: Adds a menu view, letting you see all slides in a grid. Hit m to toggle to menu view, continue navigating your deck, and hit m to return to normal view. Touch devices can double-tap the deck to switch between&nbsp;views.
-		</li>
-
-		<li class="slide" id="extensions-navigation">
-			<strong>deck.navigation</strong>: Adds clickable left and right buttons for the less keyboard&nbsp;inclined.
-		</li>
-
-		<li class="slide" id="extensions-status">
-			<strong>deck.status</strong>: Adds a page number indicator. (current/total)
-		</li>
-
-		<li class="slide" id="extensions-scale">
-			<strong>deck.scale</strong>: Scales each slide to fit within the deck container using CSS Transforms for those browsers that support them.
+		<li>
+			<h3>Estudante de <strong>Sistemas de Informação</strong></h3>
+			<p>Na UFF, na longínqua terra de Niterói.</p>
 		</li>
 	</ul>
-	
-	<p class="slide" id="extension-folders">Each extension folder in the download package contains the necessary JavaScript, CSS, and HTML&nbsp;files. For a complete list of extension modules included in deck.js, check out the&nbsp;<a href="http://imakewebthings.github.com/deck.js/docs">documentation</a>.</p>
 </section>
 
-<section class="slide" id="nested">
-	<h2>Nested Slides</h2>
-	<p>That last slide had a few steps.  To create substeps in slides, just nest them:</p>
-	<pre><code>&lt;section class=&quot;slide&quot;&gt;
-  &lt;h2&gt;Extensions&lt;/h2&gt;
-  &lt;p&gt;Core gives you basic slide functionality...&lt;/p&gt;		
-  &lt;ul&gt;
-     &lt;li class=&quot;slide&quot;&gt;
-        &lt;h3&gt;deck.goto&lt;/h3&gt;
-        &lt;p&gt;Adds a shortcut key to jump to any slide number...&lt;/p&gt;
-     &lt;/li&gt;
-     &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;	
-     &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;
-     &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/section&gt;</code></pre>
+<section class="slide" id="o-DOM">
+	<h2>Document Object Model</h2>
+	<p>Muita gente não conhece o DOM, ou não gosta dele :'(</p>
+	<ul>
+		<li class="slide">
+			<h3>As APIs do DOM são muitas vezes estranhas</h3>
+		</li>
+		<li class="slide">
+			<h3>Os browsers nem sempre respeitam as especificações</h3>
+			<p><a href="http://www.w3.org/TR/REC-DOM-Level-1/" rel="external">DOM1 (1998)</a>, <a href="http://www.w3.org/TR/DOM-Level-2-Core/" rel="external">DOM2 (2000)</a>, <a href="http://www.w3.org/TR/DOM-Level-3-Core/" rel="external">DOM3 (2004)</a>, <a href="http://www.w3.org/TR/domcore/" rel="external">DOM4 (Draft)</a></p>
+		</li>
+		<li class="slide">
+			<h3>Existem bibliotécas muito boas pra lidar com ele</h3>
+			<p>jQuery, YUI, Motools, Zepto, Dojo Tookit...</p>
+		</li>
+	</ul>
 </section>
 
-<section class="slide" id="elements-images">
-	<h2>Other Elements: Images</h2>
-	<img src="http://placekitten.com/600/375" alt="Kitties">
-	<pre><code>&lt;img src=&quot;http://placekitten.com/600/375&quot; alt=&quot;Kitties&quot;&gt;</code></pre>
+<section class="slide" id="bibliotecas">
+	<h2>Usar bibliotécas não é ruim...</h2>
+	<p>Mas você não deve ser totalmente dependente delas.</p>
+	<p>Saber como funciona te torna um desenvolvedor melhor!</p>
 </section>
 
-<section class="slide" id="elements-blockquotes">
-	<h2>Other Elements: Blockquotes</h2>
-	<blockquote cite="http://example.org">
-		<p>Food is an important part of a balanced diet.</p>
-		<p><cite>Fran Lebowitz</cite></p>
-	</blockquote>
-	<pre><code>&lt;blockquote cite=&quot;http://example.org&quot;&gt;
-  &lt;p&gt;Food is an important part of a balanced diet.&lt;/p&gt;
-  &lt;p&gt;&lt;cite&gt;Fran Lebowitz&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</code></pre>
+<section class="slide" id="arvore">
+	<h2>O DOM é uma árvore</h2>
+	<img src="img/riojs-dom.jpg" alt="Representação do DOM da RioJS Conference 2013">
 </section>
 
-
-<section class="slide" id="elements-videos">
-	<h2>Other Elements: Video Embeds</h2>
-	<p>Embed videos from your favorite online video service or with an HTML5 video&nbsp;element.</p>
-	
-	<iframe src="http://player.vimeo.com/video/1063136?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0"></iframe>
-	
-	<pre><code>&lt;iframe src=&quot;http://player.vimeo.com/video/1063136?title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; width=&quot;400&quot; height=&quot;225&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code></pre>
+<section class="slide" id="arvore-2">
+	<h2>O DOM é uma árvore</h2>
+	<img src="img/html-tree.png" alt="Árvore representando o código ao lado">
+<pre><code>&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;Text&lt;/p&gt;
+        &lt;div&gt;&lt;img&gt;&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
 </section>
 
-<section class="slide" id="digging-deeper">
-	<h2>Digging Deeper</h2>
-	<p>If you want to learn about making your own themes, extending deck.js, and more, check out the&nbsp;<a href="docs/">documentation</a>.</p>
+<section class="slide" id="listas">
+	<h2><code>HTMLCollection</code> vs. <code>NodeList</code></h2>
+	<p>Ambas são listas contendo referencias ao DOM.</p>
+	<p>Você obtem uma...</p>
+	<ul>
+		<li>
+			<h3><code>HTMLCollection</code> quando usa</h3>
+			<p><code>document.anchors</code>, <code>document.applets</code>, <code>document.forms</code>, <code>document.images</code>, <code>document.links</code>, <code>formElement.elements</code>, <code>selectElement.options</code>, <code>tableElement.rows</code>, <code>tableElement.tBodies</code>, <code>tableRowElement.cells</code>, <code>document.embeds</code>.</p>
+		</li>
+		<li>
+			<h3><code>NodeList</code> quando usa</h3>
+			<p><code>getElementsByTagName()</code>, <code>getElementsByClassName()</code>, <code>querySelectorAll()</code> ou <code>Node.childNodes</code>.</p>
+		</li>
+	</ul>
+</section>
+
+<section class="slide" id="HTMLCollection">
+	<h2><code>HTMLCollection</code></h2>
+<pre><code>HTML:
+&lt;body&gt;
+    &lt;form id=&quot;form1&quot;&gt;
+        &lt;!-- ... --&gt;
+    &lt;/form&gt;
+    &lt;form name=&quot;form2&quot;&gt;
+        &lt;!-- ... --&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+
+JS:
+document.forms[ 'form1' ] === document.forms[ 0 ]; //true
+document.forms.namedItem( 'form2' ) === document.form.item( 1 ); //true</code></pre>
+</section>
+
+<section class="slide" id="HTMLCollection-2">
+	<h2><code>HTMLCollection</code></h2>
+	<p>Não use <code>id</code>s ou <code>name</code>s repetidos num documento...</p>
+
+<pre><code>HTML:
+&lt;body&gt;
+    &lt;form name=&quot;contato&quot;&gt;
+        &lt;!-- ... --&gt;
+    &lt;/form&gt;
+    &lt;form name=&quot;contato&quot;&gt;
+        &lt;!-- ... --&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+
+Gecko:
+document.forms[ 'contato' ]
+// primeiro form[name='contato']
+
+Webkit/IE:
+document.forms[ 'contato' ]
+// HTMLCollection com todos os form[name='contato']
+
+Presto:
+document.forms[ 'form' ]
+// NodeList com todos os form[name='contato']</code></pre>
+</section>
+
+<section class="slide" id="HTMLCollection-exemplo">
+	<h2><code>HTMLCollection</code></h2>
+	<p>A <a href="http://www.w3.org/TR/domcore/#interface-htmlcollection" rel="external">especificação</a> dis que o <code>name</code> tem precedencia sobre <code>id</code>... mas nem sempre ela é respeitada</p>
+	<iframe src="examples/html-collections.html" frameborder="0"></iframe>
+</section>
+
+<section class="slide" id="NodeList">
+	<h2><code>NodeList</code></h2>
+	<p>São parecidas com <code>HTMLColections</code>, mas não tem os método <code>namedItem()</code> e, pela especificação, não deveriam poder ser acessadas via <code>id</code> ou <code>name</code>. Mas algumas engines implementam esse comportamento</p>
+	<pre><code>HTML:
+&lt;body&gt;
+    &lt;form id=&quot;contato1&quot;&gt;
+        &lt;!-- ... --&gt;
+    &lt;/form&gt;
+    &lt;form id=&quot;contato2&quot;&gt;
+        &lt;!-- ... --&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+
+JS:
+var forms = document.getElementsByTagName( 'form' );
+
+forms[ 'contato1' ] // pode funcionar ou não</code></pre>
+</section>
+<section class="slide" id="NodeList-live">
+	<h2><code>NodeList</code>s são dinâmicas</h2>
+		<pre><code>HTML:
+&lt;body&gt;
+    &lt;p&gt;Paragrafo 1&lt;/p&gt;
+    &lt;p&gt;Paragrafo 2&lt;/p&gt;
+    &lt;p&gt;Paragrafo 3&lt;/p&gt;
+&lt;/body&gt;
+
+JS:
+var paragrafos = document.getElementsByTagName( 'p' );
+paragrafos.length; // 3
+var novoParagrafo = document.createElement( 'p' );
+document.body.appendChild( novoParagrafo );
+paragrafos.length; // 4</code></pre>
+	<p class="slide"><code>querySelectorAll()</code> não retorna uma <code>NodeList</code> dinâmica :(</p>
+</section>
+
+<section class="slide" id="arrays">
+	<h2><code>NodeLists</code> e <code>HTMLCollections</code> não são <code>Arrays</code></h2>
+	<pre><code>NodeList instaceof Array; // false</code></pre>
+	<div class="slide">
+		<p>Mas podem ser transformadas</p>
+		<pre><code>var paragrafos = document.querySelectorAll( 'p' );
+paragrafos = Array.prototype.slice.call( paragrafos );
+paragrafos.forEach(function( p ) {
+    p.classList.add( 'red' );
+});</code></pre>
+	</div>
+</section>
+
+<section class="slide" id="Node">
+	<h2><code>Node</code></h2>
+	<p>São cada um dos nós da árvore. Elementos, comentarios, texto. Tudo é um Node. Inclusive <code>document</code>. <code>Element</code> é um tipo de <code>Node</code>, <code>TextNode</code> também.</p>
+	<p>Você obtem <code>Node</code>s de varias maneiras. Exemplos mais comuns</p>
+	<ul>
+		<li><code>getElementById()</code>, <code>querySelector()</code></li>
+		<li><code>document</code>, <code>document.body</code>, <code>document.head</code>...</li>
+		<li>Cada um dos filhos de uma <code>NodeList</code>/<code>HTMLCollection</code>.</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Alguns atributos legais de <code>Node</code></h2>
+	<ul>
+		<li class="slide"><strong><code>Node.nodeName</code></strong>: nome do <code>Node</code>. LI, P, UL, #comment, #text...</li>
+		<li class="slide">
+			<p><strong><code>Node.parentElement</code></strong>: Elemento pai</p>
+			<pre><code>document.getElementById( 'run' ).onclick = function(){
+    this.parentElement.className += ' running';
+}</code></pre>
+		</li>
+	</ul>
 </section>
 
 <!-- deck.navigation snippet -->
