@@ -23,7 +23,7 @@
 	<link rel="stylesheet" href="extensions/scale/deck.scale.css">
 	
 	<!-- Style theme. More available in /themes/style/ or create your own. -->
-	<link rel="stylesheet" href="themes/style/swiss.css">
+	<link rel="stylesheet" href="themes/style/neon.css">
 	
 	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
 	<link rel="stylesheet" href="themes/transition/horizontal-slide.css">
@@ -38,7 +38,7 @@
 	<h1>Dominando o seu DOM</h1>
 </section>
 
-<section class="slide" id="photo">
+<section class="slide">
 	<h2>Este cara feio que vos fala</h2>
 	<img src="img/leobetosouza.jpg">
 </section>
@@ -61,7 +61,7 @@
 	</ul>
 </section>
 
-<section class="slide" id="o-DOM">
+<section class="slide" id="DOM">
 	<h2>Document Object Model</h2>
 	<p>Muita gente não conhece o DOM, ou não gosta dele :'(</p>
 	<ul>
@@ -79,18 +79,18 @@
 	</ul>
 </section>
 
-<section class="slide" id="bibliotecas">
+<section class="slide">
 	<h2>Usar bibliotécas não é ruim...</h2>
-	<p>Mas você não deve ser totalmente dependente delas.</p>
-	<p>Saber como funciona te torna um desenvolvedor melhor!</p>
+	<p class="slide">Mas você não deve ser totalmente dependente delas.</p>
+	<p class="slide">Saber como funciona te torna um desenvolvedor melhor!</p>
 </section>
 
-<section class="slide" id="arvore">
+<section class="slide">
 	<h2>O DOM é uma árvore</h2>
 	<img src="img/riojs-dom.jpg" alt="Representação do DOM da RioJS Conference 2013">
 </section>
 
-<section class="slide" id="arvore-2">
+<section class="slide">
 	<h2>O DOM é uma árvore</h2>
 	<img src="img/html-tree.png" alt="Árvore representando o código ao lado">
 <pre><code>&lt;html&gt;
@@ -106,11 +106,11 @@
 	<p>Ambas são listas contendo referencias ao DOM.</p>
 	<p>Você obtem uma...</p>
 	<ul>
-		<li>
+		<li class="slide">
 			<h3><code>HTMLCollection</code> quando usa</h3>
 			<p><code>document.anchors</code>, <code>document.applets</code>, <code>document.forms</code>, <code>document.images</code>, <code>document.links</code>, <code>formElement.elements</code>, <code>selectElement.options</code>, <code>tableElement.rows</code>, <code>tableElement.tBodies</code>, <code>tableRowElement.cells</code>, <code>document.embeds</code>.</p>
 		</li>
-		<li>
+		<li class="slide">
 			<h3><code>NodeList</code> quando usa</h3>
 			<p><code>getElementsByTagName()</code>, <code>getElementsByClassName()</code>, <code>querySelectorAll()</code> ou <code>Node.childNodes</code>.</p>
 		</li>
@@ -134,7 +134,7 @@ document.forms[ 'form1' ] === document.forms[ 0 ]; //true
 document.forms.namedItem( 'form2' ) === document.form.item( 1 ); //true</code></pre>
 </section>
 
-<section class="slide" id="HTMLCollection-2">
+<section class="slide">
 	<h2><code>HTMLCollection</code></h2>
 	<p>Não use <code>id</code>s ou <code>name</code>s repetidos num documento...</p>
 
@@ -161,16 +161,16 @@ document.forms[ 'form' ]
 // NodeList com todos os form[name='contato']</code></pre>
 </section>
 
-<section class="slide" id="HTMLCollection-exemplo">
+<section class="slide">
 	<h2><code>HTMLCollection</code></h2>
-	<p>A <a href="http://www.w3.org/TR/domcore/#interface-htmlcollection" rel="external">especificação</a> dis que o <code>name</code> tem precedencia sobre <code>id</code>... mas nem sempre ela é respeitada</p>
+	<p>A <a href="http://www.w3.org/TR/domcore/#interface-htmlcollection" rel="external">especificação</a> diz que o <code>name</code> tem precedência sobre <code>id</code>... mas nem sempre ela é respeitada</p>
 	<iframe src="examples/html-collections.html" frameborder="0"></iframe>
 </section>
 
 <section class="slide" id="NodeList">
 	<h2><code>NodeList</code></h2>
 	<p>São parecidas com <code>HTMLColections</code>, mas não tem os método <code>namedItem()</code> e, pela especificação, não deveriam poder ser acessadas via <code>id</code> ou <code>name</code>. Mas algumas engines implementam esse comportamento</p>
-	<pre><code>HTML:
+	<pre class='slide'><code>HTML:
 &lt;body&gt;
     &lt;form id=&quot;contato1&quot;&gt;
         &lt;!-- ... --&gt;
@@ -185,7 +185,7 @@ var forms = document.getElementsByTagName( 'form' );
 
 forms[ 'contato1' ] // pode funcionar ou não</code></pre>
 </section>
-<section class="slide" id="NodeList-live">
+<section class="slide">
 	<h2><code>NodeList</code>s são dinâmicas</h2>
 		<pre><code>HTML:
 &lt;body&gt;
@@ -201,11 +201,13 @@ var novoParagrafo = document.createElement( 'p' );
 document.body.appendChild( novoParagrafo );
 paragrafos.length; // 4</code></pre>
 	<p class="slide"><code>querySelectorAll()</code> não retorna uma <code>NodeList</code> dinâmica :(</p>
+	<p class="slide">Apesar da especificação não dizer, na prática, <code>HTMLCollections</code> também são dinâmicas</p>
 </section>
 
-<section class="slide" id="arrays">
+<section class="slide" id="Arrays">
 	<h2><code>NodeLists</code> e <code>HTMLCollections</code> não são <code>Arrays</code></h2>
-	<pre><code>NodeList instaceof Array; // false</code></pre>
+	<pre><code>NodeList instaceof Array; // false
+HTMLCollection instaceof Array; // false</code></pre>
 	<div class="slide">
 		<p>Mas podem ser transformadas</p>
 		<pre><code>var paragrafos = document.querySelectorAll( 'p' );
@@ -218,7 +220,7 @@ paragrafos.forEach(function( p ) {
 
 <section class="slide" id="Node">
 	<h2><code>Node</code></h2>
-	<p>São cada um dos nós da árvore. Elementos, comentarios, texto. Tudo é um Node. Inclusive <code>document</code>. <code>Element</code> é um tipo de <code>Node</code>, <code>TextNode</code> também.</p>
+	<p>São cada um dos nós da árvore. Elementos, comentarios, texto. Tudo é um Node. Inclusive <code>document</code>. <code>Element</code> é um tipo de <code>Node</code>. <code>TextNode</code> também.</p>
 	<p>Você obtem <code>Node</code>s de varias maneiras. Exemplos mais comuns</p>
 	<ul>
 		<li><code>getElementById()</code>, <code>querySelector()</code></li>
@@ -230,15 +232,180 @@ paragrafos.forEach(function( p ) {
 <section class="slide">
 	<h2>Alguns atributos legais de <code>Node</code></h2>
 	<ul>
-		<li class="slide"><strong><code>Node.nodeName</code></strong>: nome do <code>Node</code>. LI, P, UL, #comment, #text...</li>
+		<li class="slide"><strong><code>Node.nodeName</code></strong>: nome do <code>Node</code>. DIV, P, LI, #comment, #text...</li>
 		<li class="slide">
-			<p><strong><code>Node.parentElement</code></strong>: Elemento pai</p>
+			<p><strong><code>Node.nodeType</code></strong>: tipo do <code>Node</code>. 1, 2, 3, 4...</p>
+			<pre><code>node.nodeType === Node.ELEMENT_NODE;
+node.nodeType === Node.TEXT_NODE;
+node.nodeType === Node.COMMENT_NODE;
+node.nodeType === Node.DOCUMENT_FRAGMENT_NODE;</code></pre>
+		</li>	</ul>
+</section>
+
+<section class="slide">
+	<h2>Outro atributo legal de <code>Node</code></h2>
+	<ul>
+		<li class="slide">
+			<p><strong><code>Node.parentElement</code></strong>: <code>Element</code> pai (DOM4, IE9+)</p>
 			<pre><code>document.getElementById( 'run' ).onclick = function(){
-    this.parentElement.className += ' running';
+    if ( this.parentElement ) {
+        this.parentElement.className += ' running';
+    }
 }</code></pre>
 		</li>
 	</ul>
 </section>
+
+<section class="slide">
+	<h2>Mais outro atributo legal de <code>Node</code></h2>
+	<ul>
+		<li class="slide">
+			<p><strong><code>Node.parentNode</code></strong>: <code>Node</code> pai</p>
+			<pre><code>document.getElementById( 'run' ).onclick = function(){
+    var parent = this.parentNode;
+    while ( parent ) {
+        if ( parent.nodeType === Node.ELEMENT_NODE ) {
+            this.parentElement.className += ' running';
+            return;
+        }
+        parent = parent.parentNode;
+    }
+}</code></pre>
+		</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Outro atributo legal de <code>Node</code></h2>
+	<ul>
+		<li class="slide">
+			<p><strong><code>Node.textContent</code></strong>: todo o texto de dentro do Node (IE9+)</p>
+			<pre><code>var style = document.querySelector( 'style.principal' );
+var css = style.textContent; // ;)
+
+document.getElementById( 'headline' ).textContent = 'Lorem ipsum dolor sit amet.'; </code></pre>
+			<p class='slide'>Modifica sem causar reflow (android approved!)</p>
+		</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Método legal de <code>Node</code></h2>
+	<ul>
+		<li class="slide">
+			<p><strong><code>Node.cloneNode()</code></strong></p>
+			<pre><code>var $$ = document.getElementsByClassName;
+var menuClone = $$( 'main-nav' )[0].cloneNode( true );
+$$( 'footer' )[0].appendChild( menuClone );</code></pre>
+		<p class="slide">Cuidado para não duplicar IDs!</p>
+		</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Método legal de <code>Node</code></h2>
+	<ul>
+		<li class="slide">
+			<p><strong><code>Node.insertBefore()</code></strong>: insere um <code>Node</code> antes de outro</p>
+			<pre><code>var links = document.querySelectorAll( 'a.icon' );
+var parent, icon; 
+for ( var i = 0, l = link.length; i < l; i++ ) {
+	icon = document.createElement( 'i' );
+	icon.className = link[ i ].getAttribute( 'data-icon' );
+	parent = link[ i ].parentElement;
+	parent.insertBefore( icon, link[ i ] )
+}</code></pre>
+		</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Outros métodos legais de <code>Node</code></h2>
+	<ul>
+		<li class="slide">
+			<p><strong><code>Node.removeChild()</code></strong>: remove um <code>Node</code> filho e retorna ele</p>
+			<pre><code>var parent = node.parentNode;
+parent.removeChild( node );</code></pre>
+		</li>
+		<li class="slide">
+			<p><strong><code>Node.replaceChild()</code></strong>: substitui um <code>Node</code> filho por outro e retorna o substituído</p>
+		</li>
+	</ul>
+</section>
+
+
+<section class="slide" id="Elements">
+	<h2><code>Element</code>s</h2>
+	<ul>
+		<li class="slide">São <code>Node</code>s que são elementos HTML</li>
+		<li class="slide">Tem attributos como <code>className</code>, <code>classList</code> (DOM4), <code>attributes</code>, <code>style</code>, <code>tagName</code>...</li>
+		<li class="slide">Métodos como <code>addEventListener</code>, <code>getAttribute</code>, <code>hasAttribute</code>...</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2><code>Element</code>s</h2>
+	<p>E você pode pesquisar dentro deles!</p>
+				<pre><code>var container = document.getElementById( 'container' );
+var items = container.getElementsByClassName( 'item' );</code></pre>
+	<p class="slide">Você não precisa pecorrer o DOM inteiro quando sabe onde achar!<br>
+		Use <code>getElementsByClassName</code>, <code>getElementsByTagName</code>, <code>querySelector</code> e <code>querySelectorAll</code> à vontade!</p>
+</section>
+
+<section class="slide">
+	<h2>Um futuro método muito legal de <code>Element</code></h2>
+	<ul>
+		<li class="slide">
+			<p><strong><code>Element.matches()</code></strong>: diz se um <code>Element</code> casa com um seletor (IE9+; vendor prefix)</p>
+		</li>
+	</ul>
+</section>
+
+<section class="slide" id="DocumentFragment">
+	<h2><code>DocumentFragment</code></h2>
+	<ul>
+		<li class="slide">É um <code>Node</code> sem Pai :'(</li>
+		<li class="slide">Na verdade é um <code>Node</code> que nunca fez parte da àrvore. Não teve família! :'(</li>
+		<li class="slide">Ou seja: quando você modifica o interior dele, não ocorre reflow \m/</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2><code>DocumentFragment</code></h2>
+	<p>Ele precisa ser adotado!</p>
+	<pre><code>var ul = document.querySelector( '.list');
+var frag = document.createDocumentFragment();
+var frutas = [ 'Laranja', 'Maçã', 'Pera', 'Morango', 'Melancia', 'Jaca' ];
+ 
+frutas.forEach(function( fruta ) {
+    var li = document.createElement( 'li' );
+    li.innerHTML = fruta;
+    frag.appendChild( li );
+});
+ 
+ul.appendChild( frag );</code></pre>
+</section>
+
+<section class="slide" id="refs">
+	<h2>Links</h2>
+	<ul>
+		<li class="slide"><a href="http://domenlightenment.com/" rel="external">DOM Elightenment</a></li>
+		<li class="slide"><a href="https://developer.mozilla.org/en-US/docs/DOM" rel="external">MDN - Document Object Model</a></li>
+		<li class="slide"><a href="http://www.slideshare.net/nzakas/javascript-apis-youve-never-heard-of-and-some-you-have#btnNext" rel="exernal">JavaScript APIs you’ve never heard of (and some you have)</a></li>
+		<li class="slide"><a href="http://taligarsiel.com/Projects/howbrowserswork1.htm" rel="external">How Browsers Work</a></li>
+		<li class="slide"><a href="http://caniuse.com/" rel="external">Can I Use</a></li>
+		<li class="slide"><a href="http://www.aharef.info/static/htmlgraph/" rel="external">Webpages As a Graph</a></li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h1><blink>Perguntas?</blink></h1>
+</section>
+
+<section class="slide">
+	<h1>Obrigado! ;)</h1>
+</section>
+
 
 <!-- deck.navigation snippet -->
 <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
@@ -251,13 +418,6 @@ paragrafos.forEach(function( p ) {
 	<span class="deck-status-total"></span>
 </p>
 
-<!-- deck.goto snippet -->
-<form action="." method="get" class="goto-form">
-	<label for="goto-slide">Go to slide:</label>
-	<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
-	<datalist id="goto-datalist"></datalist>
-	<input type="submit" value="Go">
-</form>
 
 <!-- deck.hash snippet -->
 <a href="." title="Permalink to this slide" class="deck-permalink">#</a>
@@ -271,9 +431,7 @@ paragrafos.forEach(function( p ) {
 <script src="core/deck.core.js"></script>
 <script src="extensions/hash/deck.hash.js"></script>
 <script src="extensions/menu/deck.menu.js"></script>
-<script src="extensions/goto/deck.goto.js"></script>
 <script src="extensions/status/deck.status.js"></script>
-<script src="extensions/navigation/deck.navigation.js"></script>
 <script src="extensions/scale/deck.scale.js"></script>
 
 <!-- Initialize the deck -->

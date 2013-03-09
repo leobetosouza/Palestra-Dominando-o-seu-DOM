@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Shadow DOM</title>
+</head>
+<body>
+	<ul>
+		<li class="first">Lorem ipsum dolor sit amet.</li>
+		<li>Nam cupiditate explicabo repellat a.</li>
+		<li>Laudantium fugiat obcaecati cum officiis?</li>
+		<li>Voluptatum id est cum ullam.</li>
+		<li class="last">Ipsam quibusdam aut impedit quae.</li>
+	</ul>
+	<progress></progress>
+
+	<script>
+		var elemProto = Element.prototype;
+
+		elemProto.matches = elemProto.matches || elemProto.webkitMatchesSelector || elemProto.mozMatchesSelector || elemProto.msMatchesSelector || elemProto.oMatchesSelector;
+
+		var lis = document.querySelectorAll( 'li' );
+
+		for ( var i = 0, l = lis.length; i < l; i++ ) {
+
+			if ( lis[ i ].matches( '.first' ) ) {
+				lis[ i ].style.background = '#f00';
+			}
+
+			if ( lis[ i ].matches( '.last' ) ) {
+				lis[ i ].style.background = '#00f';
+			}
+		}
+	</script>
+</body>
+</html>

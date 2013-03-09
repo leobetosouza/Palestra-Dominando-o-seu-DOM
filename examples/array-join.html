@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Array.join()</title>
+</head>
+<body>
+	<ul class="list"></ul>
+
+	<script>
+
+		var frutas = [ 'Laranja', 'Maçã', 'Pera', 'Morango', 'Melancia', 'Jaca' ];
+
+		document.querySelector( '.list' ).innerHTML = '<li>' + frutas.join( '</li><li>' ) + '</li>'
+
+	</script>
+</body>
+</html>

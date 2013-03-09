@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Element.matches</title>
+</head>
+<body>
+	<ul>
+		<li>Lorem ipsum dolor sit amet.</li>
+		<li>Nam cupiditate explicabo repellat a.</li>
+		<li>Laudantium fugiat obcaecati cum officiis?</li>
+		<li>Voluptatum id est cum ullam.</li>
+		<li>Ipsam quibusdam aut impedit quae.</li>
+	</ul>
+
+	<script>
+		var elemProto = Element.prototype;
+
+		elemProto.matches = elemProto.matches || elemProto.webkitMatchesSelector || elemProto.mozMatchesSelector || elemProto.msMatchesSelector || elemProto.oMatchesSelector;
+
+		var lis = document.querySelectorAll( 'li' );
+
+		for ( var i = 0, l = lis.length; i < l; i++ ) {
+
+			if ( lis[ i ].matches( ':first-child' ) ) {
+				lis[ i ].style.background = '#f00';
+			}
+
+			if ( lis[ i ].matches( ':last-child' ) ) {
+				lis[ i ].style.background = '#00f';
+			}
+		}
+	</script>
+</body>
+</html>

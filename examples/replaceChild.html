@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>removeChild</title>
+	<style>
+	.box{
+		width:200px;
+		height:200px;
+		background:aqua;
+		border:1px solid #000;
+		float:left;
+		line-height:200px;
+		text-align:center;
+	}
+	</style>
+</head>
+<body>
+	<div class="box">0</div>
+	<div class="box">1</div>
+	<div class="box">2</div>
+	<div class="box">3</div>
+	<div class="box">4</div>
+	<div class="box">5</div>
+	<div class="box">6</div>
+	<div class="box">7</div>
+	<div class="box">8</div>
+	<div class="box">9</div>
+
+	<script>
+
+		var divs = Array.prototype.slice.call ( document.getElementsByClassName( 'box' ) );
+
+		divs.forEach(function( div ) {
+			div.onclick = function() {
+
+				var i = Math.floor( Math.random() * divs.length );
+
+
+				document.body.insertBefore( this, document.body.replaceChild( divs[ i ], this ) );
+			};
+		});
+
+	</script>
+</body>
+</html>

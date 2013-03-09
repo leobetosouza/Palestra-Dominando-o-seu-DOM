@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>removeChild</title>
+	<style>
+	.box{
+		width:200px;
+		height:200px;
+		background:aqua;
+		border:1px solid #000;
+		float:left;
+		line-height:200px;
+		text-align:center;
+	}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<button id="fujao">Aperte-me</button>
+	</div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+
+	<script>
+
+		var divs = Array.prototype.slice.call ( document.getElementsByClassName( 'box' ) );
+
+		document.getElementById( 'fujao' ).onmouseover = function() {
+
+			var parent = this.parentNode;
+			var i = divs.indexOf( parent ) + 1;
+
+			if ( i === divs.length) {
+
+				i = 0;
+
+			}
+
+			divs[ i ].appendChild( parent.removeChild( this ) );
+
+		};
+
+	</script>
+</body>
+</html>

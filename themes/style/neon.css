@@ -18,23 +18,24 @@
   border-bottom-color: #ccc;
   font-weight: normal;
   font-weight: 100;
-  text-shadow: 0 0 15px #af0, 0 0 2px #fff;
   border-bottom: 1px solid #333;
 }
 .deck-container .slide h3 {
   color: #fff;
   font-weight: normal;
   font-weight: 100;
-  text-shadow: 0 0 10px #fff, 0 0 2px #fff;
 }
 .deck-container .slide pre {
-  border-color: #333;
+  border: 0;
+  white-space: pre;
+  overflow:auto;
+  padding:0;
 }
 .deck-container .slide pre code {
   color: #fff;
 }
 .deck-container .slide code {
-  color: #f0a;
+  color: rgb(0, 170, 255);
 }
 .deck-container .slide blockquote {
   font-size: 2em;
@@ -60,14 +61,14 @@
   background: #a0f;
 }
 .deck-container .slide a, .deck-container .slide a:hover, .deck-container .slide a:focus, .deck-container .slide a:active, .deck-container .slide a:visited {
-  color: #f0a;
+  color: rgb(0, 170, 255);
   text-decoration: none;
 }
 .deck-container .slide a:hover, .deck-container .slide a:focus {
   text-decoration: underline;
 }
 .deck-container .deck-prev-link, .deck-container .deck-next-link {
-  background: #f0a;
+  background: rgb(0, 170, 255);
   text-shadow: 0 0 3px #fff;
 }
 .deck-container .deck-prev-link, .deck-container .deck-prev-link:hover, .deck-container .deck-prev-link:focus, .deck-container .deck-prev-link:active, .deck-container .deck-prev-link:visited, .deck-container .deck-next-link, .deck-container .deck-next-link:hover, .deck-container .deck-next-link:focus, .deck-container .deck-next-link:active, .deck-container .deck-next-link:visited {
