@@ -16,7 +16,11 @@
 	<script>
 		var elemProto = Element.prototype;
 
-		elemProto.matches = elemProto.matches || elemProto.webkitMatchesSelector || elemProto.mozMatchesSelector || elemProto.msMatchesSelector || elemProto.oMatchesSelector;
+		elemProto.matches = elemProto.matches ||
+							elemProto.webkitMatchesSelector ||
+							elemProto.mozMatchesSelector ||
+							elemProto.msMatchesSelector ||
+							elemProto.oMatchesSelector;
 
 		var lis = document.querySelectorAll( 'li' );
 
